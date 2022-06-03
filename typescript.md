@@ -27,3 +27,14 @@
         3. boolean: 布尔值 true 或 false
         4. 字面量： 其本身，限制变量的值就是该字面量的值
         5.  any: 任意类型
+        6. unknown: 类型安全的 any
+        7. void: 
+        。。。
+    - TS 编译选项： 
+        1. 语法： tsc <文件名>.ts -w  加了 -w 表示watch 实时监控文件变化； 监视关掉用 ctr+c
+        2. 批量编译：需要新建 tsconfig.json 文件，会有一个默认结构，即便是空的，执行： tsc tsconfig.json 也会把所有的ts 文件统一编译成js; 
+        3. tsc -w 会监视所有文件；配合第二步的tsconfig.js 使用； tsconfig.json 是ts编译器的配置文件，可以根据它的嘻嘻来对代码进行编译： 
+            {
+                "include"
+                
+            }

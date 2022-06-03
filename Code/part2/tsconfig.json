@@ -1,0 +1,9 @@
+{
+    // include 用来指定哪些 ts 文件需要编译；是个数组，数组元素是文件路径
+    //  路径： ** 表示任意目录  * 表示任意文件
+    "include": ["./src/**/*"],
+
+    //  " exclude" 是不需要编译的文件，有个默认值，可以不手动设置，默认值是：['node_modules','bower-components','jspm-packages']
+    "exclude": []
+    // extends 是继承，表示继承之前的 tsconfig.json文件，然后手动添加额外的配置 语法： “extends":"./src/tsconfig.json"
+}
