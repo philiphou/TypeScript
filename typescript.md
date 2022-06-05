@@ -46,8 +46,9 @@
             - exclude : 表示不编译哪些文件； 默认值是： ['node_modules','bower_components','jspm_packages']
             - extends  : 继承某一个配置文件，类似引入外部文件；
             - files： 类似include, include 是设置文件路径 files 是直接把文件名一个个列进去: files:["xxx.ts",'xx2.ts',...]
-        5. "compilerOptions": 指的是编译器的选项；作用是决定了编译器如何对ts进行编译；里面包含了子选项： 
-            - 
+        5. "compilerOptions": 
+            - 指的是编译器的选项；作用是决定了编译器如何对ts进行编译；里面包含了子选项： 
+            - 例子：
               "compilerOptions": {
                                 // target 用来指定ts文件被编译成的ES的版本； 默认型是转换成 ES3,因为 ES3的兼容性较好；可以设置的值： 'es3','es5','es6','es2015','es2016','es2017(-2020)'
                                 "target": "ES6",

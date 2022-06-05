@@ -19,6 +19,25 @@
        "outDir": "./dist",
        //此处编译好的文件统一放在了 dist 文件目录下
     //  outFile 可以用来将代码合并为一个文件；所有的全局作用域中的代码，会合并到同一个文件中；用了模块化就合并不上了。
-        "outFile": "./dist/app.js"
+        "outFile": "./dist/app.js",
+        // allowJS 表示是否对 js 文件进行编译，模式是 false, 如果想编译，改成 true
+        "allowJs": false,
+        // checkJs 是用来指定是否检查 js 文件的语法规范， 默认值是 false, 如果要检查语法错误，就设置成 true
+        "checkJs":false,
+        // removeComments: 表示编译后的文件是否要移除注释；默认值是 false, 如果不要注释了，就设置为 true.
+        "removeComments": false,
+        //  noEmit 就是设置是否生成输出文件；默认是false,表示 生成 (noEmit:false)
+        "noEmit": false,
+        // noEmitOnError: 表示 当有错误时不生成编译后文件，默认值也是 false 表示要生成
+        "noEmitOnError": false,
+        // alwaysStrict 表示 编译后的js 文件是否使用严格模式，默认值是 false，如果编译的 ts 中 有模块引入部分，则编译时候默认进入严格模式；
+        "alwaysStrict": false,
+        // noImplicitAny 其中 any 是ts 中的一个类型，如果定义一个变量但是不指定类型，则这个变量默认就是隐形的any类型；此处该选项会去检查TS 文件中是否不允许隐式的 any 类型；
+        "noImplicitAny": false,
+        // noImplicitThis 表示不允许不明确类型的this; 默认值是false, 表示允许；
+        "noImplicitThis": false,
+        // 严格的检查空值, 默认是不检查。比如 let box1 = document.getElementById("box1") 此处box1有可能不存在是 Null, box1?.addEventListener('click',fn(){})
+        "strictNullChecks": false
+
     }
 }
