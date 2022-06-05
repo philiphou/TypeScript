@@ -37,7 +37,9 @@
         // noImplicitThis 表示不允许不明确类型的this; 默认值是false, 表示允许；
         "noImplicitThis": false,
         // 严格的检查空值, 默认是不检查。比如 let box1 = document.getElementById("box1") 此处box1有可能不存在是 Null, box1?.addEventListener('click',fn(){})
-        "strictNullChecks": false
+        "strictNullChecks": false,
+        // strict 是严格检查的总开关：如果是true,表示所有的严格检查全都开启！一般开发建议，设置为 true;这样使代码更严谨；
+        "strict":false
 
     }
 }

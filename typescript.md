@@ -30,7 +30,7 @@
         6. unknown: 类型安全的 any
         7. void: 
         。。。
-    - TS 编译选项： 
+3. TS 编译 ： 
         1. 语法： tsc <文件名>.ts -w  加了 -w 表示watch 实时监控文件变化； 监视关掉用 ctr+c
         2. 批量编译：需要新建 tsconfig.json 文件，会有一个默认结构，即便是空的，执行： tsc  也会把所有的ts 文件统一编译成js; 
         3. tsc -w 会监视所有文件；配合第二步的tsconfig.js 使用； tsconfig.json 是ts编译器的配置文件，可以根据它的嘻嘻来对代码进行编译： 
@@ -64,5 +64,20 @@
                             //  outFile 可以用来将代码合并为一个文件；所有的全局作用域中的代码，会合并到同一个文件中；用了模块化就合并不上了。
                                 "outFile": "./dist/app.js"
                             }
-
-           
+4. webpack 打包 ts 代码： 
+    - 首先创建一个项目，打开一个新的文件夹；
+    - 运行： npm init -y 
+       这个命令就是对项目初始化，产生一个 package.json 文件；这个文件类似于说明书，用于管理我们的项目；
+    - 安装 webpack: 运行： npm i -D webpack webpack-cli typescript ts-loader
+       -D 表示添加到开发依赖，全写可以是  --save-dev; webpack-cli 这个依赖可以让我们在命令行运行webpack; 
+    - 安装完毕后，package.json文件中就会显示这四个包（依赖）
+           "devDependencies": {
+                                "ts-loader": "^9.3.0",
+                                "typescript": "^4.7.3",
+                                "webpack": "^5.73.0",
+                                "webpack-cli": "^4.9.2"
+                              }
+    - 创建一个webpack的 配置文件： webpack.config.js
+    - 创建 tsconfig.json 配置文件
+    - package.json 的 script 下创建一个新的命令： 'build':"webpack" 这样直接 npm run build 就可以直接运行 weback打包
+5. 
