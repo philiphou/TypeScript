@@ -1,9 +1,24 @@
 {
     // include 用来指定哪些 ts 文件需要编译；是个数组，数组元素是文件路径
     //  路径： ** 表示任意目录  * 表示任意文件
-    "include": ["./src/**/*"],
+    "include": ["./src/**/*"], 
 
     //  " exclude" 是不需要编译的文件，有个默认值，可以不手动设置，默认值是：['node_modules','bower-components','jspm-packages']
-    "exclude": []
+    "exclude": [],
     // extends 是继承，表示继承之前的 tsconfig.json文件，然后手动添加额外的配置 语法： “extends":"./src/tsconfig.json"
+    "compilerOptions": {
+        // target 用来指定ts文件被编译成的ES的版本； 默认型是转换成 ES3,因为 ES3的兼容性较好；可以设置的值： 'es3','es5','es6','es2015','es2016','es2017(-2020)'
+        "target": "ES6",
+        // module 用来指定使用的模块化的规范； 值可以选： 'commonjs' , 'es6', 'es2015', 'es2020', 'amd', 'ststem'; ES6 = ES2015
+       "module":"amd",
+    //    lib 是用来指定项目中需要使用的库；可选值有很多。。。有提示；
+       "lib":[
+           "DOM","ES2015"
+       ],
+    //    outDir 来指定编译后的文件存放目录；一般是根目录下的 dis 目录： ./dist
+       "outDir": "./dist",
+       //此处编译好的文件统一放在了 dist 文件目录下
+    //  outFile 可以用来将代码合并为一个文件；所有的全局作用域中的代码，会合并到同一个文件中；用了模块化就合并不上了。
+        "outFile": "./dist/app.js"
+    }
 }

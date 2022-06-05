@@ -1,1 +1,4 @@
-console.log('hello ts22 变化')
+// import {hi} from 'm.js'
+let a =10, b=5
+console.log(a+b)
+// console.log(hi)

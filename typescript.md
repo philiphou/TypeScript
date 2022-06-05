@@ -32,9 +32,36 @@
         。。。
     - TS 编译选项： 
         1. 语法： tsc <文件名>.ts -w  加了 -w 表示watch 实时监控文件变化； 监视关掉用 ctr+c
-        2. 批量编译：需要新建 tsconfig.json 文件，会有一个默认结构，即便是空的，执行： tsc tsconfig.json 也会把所有的ts 文件统一编译成js; 
+        2. 批量编译：需要新建 tsconfig.json 文件，会有一个默认结构，即便是空的，执行： tsc  也会把所有的ts 文件统一编译成js; 
         3. tsc -w 会监视所有文件；配合第二步的tsconfig.js 使用； tsconfig.json 是ts编译器的配置文件，可以根据它的嘻嘻来对代码进行编译： 
-            {
-                "include"
-                
-            }
+        4.  tsconfig.json 是ts编译器的配置文件，ts编译器可以根据它的信息对代码进行编译，里面的配置包含：
+            - include
+               用来指定哪些ts文件需要被编译； 
+               {
+                   "include":[
+                       "./src/**/*",  ** 表示任意目录 * 表示任意文件；此处表示仅去编译 src 目录下的任意ts 文件；
+                   ]，
+                   “exclude":["./src/hello/**/*"]， 表示除了hello目录下的所有ts文件；
+               }
+            - exclude : 表示不编译哪些文件； 默认值是： ['node_modules','bower_components','jspm_packages']
+            - extends  : 继承某一个配置文件，类似引入外部文件；
+            - files： 类似include, include 是设置文件路径 files 是直接把文件名一个个列进去: files:["xxx.ts",'xx2.ts',...]
+        5. "compilerOptions": 指的是编译器的选项；作用是决定了编译器如何对ts进行编译；里面包含了子选项： 
+            - 
+              "compilerOptions": {
+                                // target 用来指定ts文件被编译成的ES的版本； 默认型是转换成 ES3,因为 ES3的兼容性较好；可以设置的值： 'es3','es5','es6','es2015','es2016','es2017(-2020)'
+                                "target": "ES6",
+                                // module 用来指定使用的模块化的规范； 值可以选： 'commonjs' , 'es6', 'es2015', 'es2020', 'amd', 'ststem'; ES6 = ES2015
+                            "module":"amd",
+                            //    lib 是用来指定项目中需要使用的库；可选值有很多。。。有提示；
+                            "lib":[
+                                "DOM","ES2015"
+                            ],
+                            //    outDir 来指定编译后的文件存放目录；一般是根目录下的 dis 目录： ./dist
+                            "outDir": "./dist",
+                            //此处编译好的文件统一放在了 dist 文件目录下
+                            //  outFile 可以用来将代码合并为一个文件；所有的全局作用域中的代码，会合并到同一个文件中；用了模块化就合并不上了。
+                                "outFile": "./dist/app.js"
+                            }
+
+           
