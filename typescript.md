@@ -80,4 +80,72 @@
     - 创建一个webpack的 配置文件： webpack.config.js
     - 创建 tsconfig.json 配置文件
     - package.json 的 script 下创建一个新的命令： 'build':"webpack" 这样直接 npm run build 就可以直接运行 weback打包
-5. 
+5. 面向对象简介：
+    - 介绍：
+        一切操作都要通过对象，就是所谓的面向对象； 对象就是对具体事物的抽象，对象有两大特点：数据和功能； 数据被称为属性，功能被称为方法；
+    - 类： 
+        要想面向对象，操作对象，首先要拥有对象。创建对象就要先定义类； 类就是对象的模型，程序可以根据类创建指定类型的对象；
+        -- 语法： 
+            class 类名 {
+                属性名：类型；
+                constructor(参数：类型){
+                    this.属性名=参数
+                }
+                方法名（）{
+                    。。。
+                }
+            }
+        -- 例子： 
+                // 定义类例子： 使用 class 关键字来定义类；
+                //  对象中包含了两大部分：属性和方法
+                class Person{
+                    // 下面是直接定义的属性，属于实例属性， 是 person的实例属性，需要创建实例后调用才能读取）：  
+                    name:string = "swk";
+                    age:number = 20;
+                    // 还有一种是属于 类  的属性，也叫静态属性，通过 Person.属性名 去 调用；
+                    // 在属性前，使用 static 关键字，可以定义类属性，或者叫静态属性，不需要创建对象实例就可以引用；而且实例对象是读取不到类的静态属性的；是类私有的；
+                    static address:string = "beijing"
+                }
+
+                const per = new Person()
+
+                console.log(per)
+                console.log(per.name) // 输出： swk
+                console.log(Person.address) // 编译后输出： beijing
+        --继承： 
+                                // 创建一个父类 Animal ，父类也叫 super 类
+
+                    class Animal{
+                    name:string;
+                    constructor(name:string){
+                        this.name = name
+                    }
+                    sayHello(){
+                        console.log(`${this.name} is saying hello, 动物在叫`)
+                    }
+                    }
+
+                    class Cat extends Animal{
+                        //  如果我们想给子类 Cat 添加新的属性： 添加了属性后，必须要进行初始化，初始化就要调用构造函数 constructor；
+                        age:number;
+                        // 在子类中再次引入构造函数 constructor ，注意此时constructor 中传入的参数属性：第一部分是继承自父类的参数，第二部分是子类新添加的
+                        constructor(name:string,age:number){
+                            // 对于继承自父类的参数属性， 直接调用 super(参数名...), 作用相当于调用父类的构造函数，这样就可以把父类的属性添加到子类中了。
+                            super(name);
+                            // 对于子类中自己新添加的属性，要手动加入： 
+                            this.age =age
+
+                        }
+
+                            sayHello(){
+                                //  在类的方法中，super 就表示当前类的父类； 如果不想引用，也可以重写：
+                            // super.sayHello()
+                            console.log(" 我是子类喵喵喵")
+                            
+                        }
+                    }
+
+                    const miao = new Cat("miao",20)
+
+                    miao.sayHello()
+  
