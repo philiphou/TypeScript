@@ -1,3 +1,4 @@
+(function(){
 // 定义类例子： 使用 class 关键字来定义类；
 //  对象中包含了两大部分：属性和方法
 class Person{
@@ -28,3 +29,6 @@ console.log(per.name) // 输出： swk
 console.log(Person.address) // 编译后输出： beijing
 per.sayHello() // sayHello是类 Person 实例 per 的方法，要通过实例去调用；此处输出： hello,welcome to TS class
 Person.sayBye() // sayBye是类 Person  的方法，要通过类去调用；此处输出：Good Bye
+
+})()
+

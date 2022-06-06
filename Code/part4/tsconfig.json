@@ -3,7 +3,8 @@
         "module": "es2015",
         "target": "es2015",
          "strict":true,
-         "outDir":"./dist"
+         "outDir":"./dist",
+        //  "noEmitOnError": true, // 此处确保ts 文件有错误时候不会生成转移后的js 文件，保证代码正确性
     },
     "exclude": ["node_modules"],
     "include": [
